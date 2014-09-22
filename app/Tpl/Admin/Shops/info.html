@@ -1,0 +1,32 @@
+<include file="Public:header" />
+<div class="tabs">
+    <ul>
+        <li class="current"><a href="javascript:void(0)" class="current"></a></li>
+    </ul>
+</div>
+<div class="edit">
+    <form method="post" action="{:U('Admin/Shops/info')}" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$info.id}" />
+       <dl>
+            <dt>产品名称</dt>
+            <dd><input type="text" name="name" value="{$info.name}" class="w200"></dd>
+        </dl>
+        <dl>
+            <dt>产品详情</dt>
+            <dd><input type="text" name="desc" value="{$info.desc}" class="w200"></dd>
+        </dl>
+        <dl>
+        	<dt>产品信息</dt>
+        	 <select><option value="{$info.list}"class="w200"/>产品收益</option><option>期限</option><option>投资起点</option></select>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd><input type="submit" value="更 新" class="btn submit-btn" /></dd>
+        </dl>
+    </form>
+</div>
+<include file="Public:footer" />
+
+
+
+

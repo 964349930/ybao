@@ -7,15 +7,15 @@ return array(
     'URL_CASE_INSENSITIVE' => true,
     'DB_TYPE'   => 'mysql',
     'DB_HOST'   => 'localhost',
-    'DB_NAME'   => 'ybao',
+    'DB_NAME'   => 'database',
     'DB_USER'   => 'root',
-    'DB_PWD'    => 'orange',
+    'DB_PWD'    => '',
     'DB_PORT'   => '3306',
     'DB_PREFIX' => 'y_',
     'TMPL_L_DELIM' => '{',
     'TMPL_R_DELIM' => '}',
     'APP_GROUP_LIST'    =>'Home, Admin',
-    'DEFAULT_GROUP'     =>'Home',
+    'DEFAULT_GROUP'     =>'Admin',
     'APP_AUTOLOAD_PATH' =>'@.TagLib',
 );
 ?>

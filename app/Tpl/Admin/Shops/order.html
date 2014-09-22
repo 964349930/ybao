@@ -1,23 +1,20 @@
 <include file="public:header"/>
 
 <div class="tabs">
-	<ul>
-		<li class="current"><a href="javascript:void" class="btn"><span>用户订单</span></a></li>
-	</ul>
+  <ul>
+    <li class="current"><a href="javascript:void" class="btn"><span>机构详情</span></a></li>
+  </ul>
 </div>
- <div class="toolbar">
-    <a href="{:U('Admin/Article/info')}" class="btn"><span>用户新订单</span></a>
-  </div>
-
 
 <div class="list">
-      <form action="{:U('Admin/Article/info')}" method="post" class="del-form">
+      <form action="{:U('Admin/Shops/del')}" method="post" class="del-form">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <thead>
           <tr>
             <th width="5%"><input type="checkbox" class="check-all" /></th>
-            <th width="20%">订单名称</th>
-            <th width="20%">订单内容</th>
+            <th width="10%">机构ID</th>
+            <th width="20%">机构名称</th>
+            <th width="20%">客户经理</th>
             <th width="20%">操作</th>
           </tr>
         </thead>
@@ -25,15 +22,16 @@
           <empty name="list">
             <tr>
               <td colspan="11" class="empty">暂无相关信息</td>
-            </tr>
+            <tr>
           <else />
           <volist name="list" id="vo">
               <tr>
                 <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
                 <td>{$vo.name}</td>
-                <td>{$vo.status}</td>
+                <td>{$vo.group_id}</td>
                 <td>
-                    <a href="{:U('Admin/Article/del',array('id'=>$vo[id]))}">删除</a>
+                    <a href="{:U('Admin/Shops/del',array('id'=>$vo[id]))}">删除</a>
                 </td>
               </tr>
             </volist>

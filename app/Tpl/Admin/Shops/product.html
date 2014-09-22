@@ -2,23 +2,23 @@
 
 <div class="tabs">
 	<ul>
-		<li class="current"><a href="javascript:void" class="btn"><span>用户订单</span></a></li>
+		<li class="current"><a href="javascript:void" class="btn"><span>产品列表展示</span></a></li>
 	</ul>
 </div>
+
+
  <div class="toolbar">
-    <a href="{:U('Admin/Article/info')}" class="btn"><span>用户新订单</span></a>
+    <a href="{:U('Admin/Shops/info')}" class="btn"><span>产品添加</span></a>
   </div>
-
-
 <div class="list">
-      <form action="{:U('Admin/Article/info')}" method="post" class="del-form">
+      <form action="{:U('Admin/Shops/del')}" method="post" class="del-form">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <thead>
           <tr>
             <th width="5%"><input type="checkbox" class="check-all" /></th>
-            <th width="20%">订单名称</th>
-            <th width="20%">订单内容</th>
-            <th width="20%">操作</th>
+            <th width="20%">产品名称</th>
+            <td width="20%">产品信息</td>
+            <td width="20%">操作</td>
           </tr>
         </thead>
         <tbody>
@@ -31,9 +31,10 @@
               <tr>
                 <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
                 <td>{$vo.name}</td>
-                <td>{$vo.status}</td>
+                <td>{$vo.desc}</td>
                 <td>
-                    <a href="{:U('Admin/Article/del',array('id'=>$vo[id]))}">删除</a>
+                    <a href="{:U('Admin/Shops/info',array('id'=>$vo[id]))}" class="mr10">编辑</a>
+                    <a href="{:U('Admin/Shops/del',array('id'=>$vo[id]))}">删除</a>
                 </td>
               </tr>
             </volist>
