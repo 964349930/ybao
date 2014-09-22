@@ -14,8 +14,8 @@ return array(
     'DB_PREFIX' => 'y_',
     'TMPL_L_DELIM' => '{',
     'TMPL_R_DELIM' => '}',
-    'APP_GROUP_MODE'    =>1,
     'APP_GROUP_LIST'    =>'Home, Admin',
     'DEFAULT_GROUP'     =>'Home',
     'APP_AUTOLOAD_PATH' =>'@.TagLib',
 );
+?>
