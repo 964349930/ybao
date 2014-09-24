@@ -14,7 +14,7 @@
           <tr>
             <th width="5%"><input type="checkbox" class="check-all" /></th>
             <th width="20%">产品名称</th>
-            <th width="20%">是否已分配</th>
+            <th width="20%">客户经理id</th>
             <th width="20%">操作</th>
           </tr>
         </thead>
@@ -28,7 +28,7 @@
               <tr>
                 <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
                 <td>{$vo.name}</td>
-                <td>{$vo.desc}</td>
+                <td>{$vo.manage_id}</td>
                 <td>
                     <a href="{:U('Admin/Article/orgdel',array('id'=>$vo[id]))}">删除</a>
                 </td>

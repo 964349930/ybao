@@ -13,8 +13,8 @@
           <tr>
             <th width="5%"><input type="checkbox" class="check-all" /></th>
             <th width="20%">订单名称</th>
-            <th width="20%">是否为无效订单</th>
-            <th width="20%">是否处理完成</th>
+            <th width="20%">所属机构</th>
+            <th width="20%">产品信息</th>
             <th width-"20%">操作</th>
           </tr>
         </thead>
@@ -28,8 +28,8 @@
               <tr>
                 <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
                 <td>{$vo.name}</td>
-                <td>{$vo.type}</td>
-                <td>{$vo.desc}</td>
+                <td>{$vo. customer_id}</td>
+                <td>{$vo.goods_id}</td>
                 <td>
                     <a href="{:U('Home/Article/mandel',array('id'=>$vo[id]))}">删除</a>
                 </td>

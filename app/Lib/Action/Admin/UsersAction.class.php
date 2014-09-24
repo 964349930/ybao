@@ -5,16 +5,7 @@
 class UsersAction extends AdminAction
 {
 /**
-* core
-*/
-public function core()
-{
-    $usersList = D('Behavior')->select();
-    $this->assign('list', $usersList);
-    $this->display();
-}
-/**
-* ls
+* 用户列表
 */
 public function ls()
     {
@@ -25,7 +16,7 @@ public function ls()
     }
 
     /**
-     * info
+     * 添加用户
      */
     public function info()
     {
@@ -51,6 +42,9 @@ public function ls()
         $this->success('操作成功');
     }
 
+    /**
+    *删除
+    */
     public function Del(){
         $delIds = array();
         $postIds = $this-> _post('id');

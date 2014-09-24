@@ -6,16 +6,16 @@ class ArticleAction extends AdminAction
 {
 
     /**
-     * manager
+     *客户经理订单
      */
     public function manager()
     {
-        $articList = D('Man') ->select();
+        $articList = D('Orders') ->select();
         $this->assign('list',$articList);
         $this->display();
     }
     /**
-    *mandel
+    *客户经理订单删除
     */
      public function mandel(){
         $delIds = array();
@@ -31,25 +31,24 @@ class ArticleAction extends AdminAction
             $this ->error('请确定你要删除的数据');
         }
         $arrMap['id'] = array('in',$delIds);
-        if (D('Man') -> where($arrMap) ->delete()) {
+        if (D('Orders') -> where($arrMap) ->delete()) {
             $this ->success('删除成功');
         }else{
-            //print_r(D('Tpl')->getLastSQL());exit;
             $this ->error('删除失败');
         }
     }
 
     /**
-     * organic
+     * 机构订单
      */
     public function organic()
     {
-        $articList =D('Org') ->select();
+        $articList =D('Orders') ->select();
         $this->assign('list',$articList);
         $this->display();
     }
     /**
-    *orgdel
+    *机构订单删除
     */
      public function orgdel(){
         $delIds = array();
@@ -65,29 +64,28 @@ class ArticleAction extends AdminAction
             $this ->error('请确定你要删除的数据');
         }
         $arrMap['id'] = array('in',$delIds);
-        if (D('Org') -> where($arrMap) ->delete()) {
+        if (D('Orders') -> where($arrMap) ->delete()) {
             $this ->success('删除成功');
         }else{
-            //print_r(D('Tpl')->getLastSQL());exit;
             $this ->error('删除失败');
         }
     }
     /**
-     * ls
+     * 用户订单
      */
     public function ls()
     {
-        $articleList = D('Order')->select();
+        $articleList = D('Orders')->select();
         $this->assign('list', $articleList);
         $this->display();
     }
 
     /**
-     * info
+     * 用户订单添加
      */
     public function info()
     {
-        $orderObj = D('Order');
+        $orderObj = D('Orders');
         if(empty($_POST)){
             $id = $this->_get('id');
             if(!empty($id)){
@@ -108,6 +106,9 @@ class ArticleAction extends AdminAction
         }   
         $this->success('操作成功');
     }
+    /**
+    *用户订单删除
+    */
 
     public function del(){
         $delIds = array();
@@ -123,10 +124,9 @@ class ArticleAction extends AdminAction
             $this ->error('请确定你要删除的数据');
         }
         $arrMap['id'] = array('in',$delIds);
-        if (D('Order') -> where($arrMap) ->delete()) {
+        if (D('Orders') -> where($arrMap) ->delete()) {
             $this ->success('删除成功');
         }else{
-            //print_r(D('Tpl')->getLastSQL());exit;
             $this ->error('删除失败');
         }
     }

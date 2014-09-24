@@ -82,8 +82,8 @@
                 '客户经理订单' => U('Admin/Article/manager'),
             ),
             '机构管理' => array(
-                '产品详情' => U('Admin/Shops/product'),
-                '机构详情' => U('Admin/Shops/order'),
+                '产品详情' => U('Admin/Goods/product'),
+                '机构详情' => U('Admin/Goods/order'),
                 
             ),
             '用户管理' => array(

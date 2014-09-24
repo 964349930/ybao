@@ -2,16 +2,16 @@
 /**
  * 模版控制器
  */
-class ShopsAction extends AdminAction
+class GoodsAction extends AdminAction
 {
 
     /**
-     * admin
+     * 机构详情
      */
     public function order()
     {
-        $shopsList = D('News') ->select();
-        $this->assign('list',$shopsList);
+        $goodsList = D('Circles') ->select();
+        $this->assign('list',$goodsList);
         $this->display();
     }
     /**
@@ -19,8 +19,8 @@ class ShopsAction extends AdminAction
      */
     public function product()
     {
-        $shopsList = D('Product')->select();
-        $this->assign('list', $shopsList);
+        $goodsList = D('Goods')->select();
+        $this->assign('list', $goodsList);
         $this->display();
     }
 
@@ -29,11 +29,11 @@ class ShopsAction extends AdminAction
      */
     public function info()
     {
-        $shopsObj = D('Product');
+        $goodsObj = D('Goods');
         if(empty($_POST)){
             $id = $this->_get('id');
             if(!empty($id)){
-                $info = $shopsObj->where('id='.$id)->find();
+                $info = $goodsObj->where('id='.$id)->find();
                 $this->assign('info', $info);
             }
             $this->display();
@@ -42,13 +42,16 @@ class ShopsAction extends AdminAction
         $data = $this->_post();
         $id = $this->_post('id');
         if(empty($id)){
-            $shopsObj->add($data);
+            $goodsObj->add($data);
         }else{
-            $shopsObj->save($data);
+            $goodsObj->save($data);
         }
         $this->success('操作成功');
     }
 
+    /**
+    *删除
+    */
     public function del(){
         $delIds = array();
         $postIds = $this-> _post('id');
@@ -63,7 +66,7 @@ class ShopsAction extends AdminAction
             $this ->error('请确定你要删除的数据');
         }
         $arrMap['id'] = array('in',$delIds);
-        if (D('Product') -> where($arrMap) ->delete()) {
+        if (D('Goods') -> where($arrMap) ->delete()) {
             $this ->success('删除成功');
         }else{
             //print_r(D('Tpl')->getLastSQL());exit;
