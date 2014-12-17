@@ -852,7 +852,7 @@ window.Chart = function(context){
 			}
 			
 			function yPos(dataSet,iteration){
-				return xAxisPosY - animPc*(calculateOffset(data.datasets[dataSet].data[iteration],calculatedScale,scaleHop));			
+				return xAxisPosY - animPc*(calculateOffset(data.datasets[dataSet].data[iteration],calculatedScale,scaleHop));
 			}
 			function xPos(iteration){
 				return yAxisPosX + (valueHop * iteration);
@@ -886,7 +886,7 @@ window.Chart = function(context){
 				}
 				
 				else{
-					ctx.fillText(data.labels[i], yAxisPosX + i*valueHop,xAxisPosY + config.scaleFontSize+3);					
+					ctx.fillText(data.labels[i], yAxisPosX + i*valueHop,xAxisPosY + config.scaleFontSize+3);	
 				}
 
 				ctx.beginPath();
@@ -895,11 +895,11 @@ window.Chart = function(context){
 				//Check i isnt 0, so we dont go over the Y axis twice.
 				if(config.scaleShowGridLines && i>0){
 					ctx.lineWidth = config.scaleGridLineWidth;
-					ctx.strokeStyle = config.scaleGridLineColor;					
+					ctx.strokeStyle = config.scaleGridLineColor;
 					ctx.lineTo(yAxisPosX + i * valueHop, 5);
 				}
 				else{
-					ctx.lineTo(yAxisPosX + i * valueHop, xAxisPosY+3);				
+					ctx.lineTo(yAxisPosX + i * valueHop, xAxisPosY+3);
 				}
 				ctx.stroke();
 			}
@@ -920,7 +920,7 @@ window.Chart = function(context){
 				if (config.scaleShowGridLines){
 					ctx.lineWidth = config.scaleGridLineWidth;
 					ctx.strokeStyle = config.scaleGridLineColor;
-					ctx.lineTo(yAxisPosX + xAxisLength + 5,xAxisPosY - ((j+1) * scaleHop));					
+					ctx.lineTo(yAxisPosX + xAxisLength + 5,xAxisPosY - ((j+1) * scaleHop));
 				}
 				else{
 					ctx.lineTo(yAxisPosX-0.5,xAxisPosY - ((j+1) * scaleHop));
@@ -948,11 +948,11 @@ window.Chart = function(context){
 				longestText +=10;
 			}
 			xAxisLength = width - longestText - widestXLabel;
-			valueHop = Math.floor(xAxisLength/(data.labels.length-1));	
+			valueHop = Math.floor(xAxisLength/(data.labels.length-1));
 				
 			yAxisPosX = width-widestXLabel/2-xAxisLength;
-			xAxisPosY = scaleHeight + config.scaleFontSize/2;				
-		}		
+			xAxisPosY = scaleHeight + config.scaleFontSize/2;		
+		}
 		function calculateDrawingSizes(){
 			maxSize = height;
 
@@ -968,7 +968,7 @@ window.Chart = function(context){
 				rotateLabels = 45;
 				if (width/data.labels.length < Math.cos(rotateLabels) * widestXLabel){
 					rotateLabels = 90;
-					maxSize -= widestXLabel; 
+					maxSize -= widestXLabel;
 				}
 				else{
 					maxSize -= Math.sin(rotateLabels) * widestXLabel;
@@ -991,7 +991,7 @@ window.Chart = function(context){
 			
 			//Then get the area above we can safely draw on.
 			
-		}		
+		}
 		function getValueBounds() {
 			var upperValue = Number.MIN_VALUE;
 			var lowerValue = Number.MAX_VALUE;
